@@ -1,0 +1,5 @@
+C:/Users/SAUMY/OneDrive/Documents/GitHub/SlotGame1/build/CMakeFiles/SlotGameQt.dir
+C:/Users/SAUMY/OneDrive/Documents/GitHub/SlotGame1/build/CMakeFiles/edit_cache.dir
+C:/Users/SAUMY/OneDrive/Documents/GitHub/SlotGame1/build/CMakeFiles/rebuild_cache.dir
+C:/Users/SAUMY/OneDrive/Documents/GitHub/SlotGame1/build/CMakeFiles/SlotGameQt_autogen_timestamp_deps.dir
+C:/Users/SAUMY/OneDrive/Documents/GitHub/SlotGame1/build/CMakeFiles/SlotGameQt_autogen.dir
