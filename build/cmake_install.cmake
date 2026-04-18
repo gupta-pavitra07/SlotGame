@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/SAUMY/OneDrive/Documents/GitHub/SlotGame1
+# Install script for directory: /Users/pavitragupta/DAAPBL/SlotGame
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/SlotGameQt")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,13 +34,13 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Qt/Tools/mingw1310_64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/SAUMY/OneDrive/Documents/GitHub/SlotGame1/build/install_local_manifest.txt"
+  file(WRITE "/Users/pavitragupta/DAAPBL/SlotGame/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -56,6 +56,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/SAUMY/OneDrive/Documents/GitHub/SlotGame1/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/Users/pavitragupta/DAAPBL/SlotGame/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

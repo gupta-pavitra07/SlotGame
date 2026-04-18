@@ -1,3 +1,3 @@
 # Hashes of file build rules.
-70a78e9fedc5b949265d69aa35163fb7 CMakeFiles/SlotGameQt_autogen
-a79fb34102d1cda1f5b4e908d19c3dcd SlotGameQt_autogen/timestamp
+17fdb66bba424f0d7cb463a1bbc72518 CMakeFiles/SlotGameQt_autogen
+e17b4130c1cfef4bd095fdf54930d6b7 SlotGameQt_autogen/timestamp
