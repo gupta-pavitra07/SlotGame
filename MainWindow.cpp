@@ -6,6 +6,7 @@
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QTimer>
 
 #include "include/file.h"
 #include "include/probability.h"
@@ -29,9 +30,9 @@ MainWindow::MainWindow(QString name, double balance, QWidget *parent)
     reel2->setAlignment(Qt::AlignCenter);
     reel3->setAlignment(Qt::AlignCenter);
 
-    reel1->setStyleSheet("font-size: 40px;");
-    reel2->setStyleSheet("font-size: 40px;");
-    reel3->setStyleSheet("font-size: 40px;");
+    reel1->setStyleSheet("font-size: 80px;");
+    reel2->setStyleSheet("font-size: 80px;");
+    reel3->setStyleSheet("font-size: 80px;");
 
     QHBoxLayout* reelLayout = new QHBoxLayout();
     reelLayout->addWidget(reel1);
@@ -39,7 +40,7 @@ MainWindow::MainWindow(QString name, double balance, QWidget *parent)
     reelLayout->addWidget(reel3);
 
     betInput = new QLineEdit();
-    betInput->setPlaceholderText("Enter bet amount");
+    betInput->setPlaceholderText("Enter amount");
 
     strategyButton = new QPushButton("📊 Get Strategy");
     predictionButton = new QPushButton("🧠 Make Predictions");
@@ -61,6 +62,7 @@ MainWindow::MainWindow(QString name, double balance, QWidget *parent)
 
     central->setLayout(layout);
     setCentralWidget(central);
+    this->setFixedSize(800, 500);
 }
 
 void MainWindow::getStrategy()
@@ -109,35 +111,63 @@ void MainWindow::spinSlot()
 
     player->deductBalance(totalAmount);
 
-    auto result = slot.spin();
+    
+    vector<string> symbols = {"🍒", "⭐️", "💎", "🔔", "7️⃣"};
 
-    reel1->setText(QString::fromStdString(result[0]));
-    reel2->setText(QString::fromStdString(result[1]));
-    reel3->setText(QString::fromStdString(result[2]));
+    QTimer *timer = new QTimer(this);
+    int *count = new int(0);   
 
-    QString res = QString::fromStdString(
-        result[0] + " | " + result[1] + " | " + result[2]);
+    connect(timer, &QTimer::timeout, this, [=]() mutable {
 
-    double reward = evaluator.evaluateAll(currentPredictions, result);
+        
+        reel1->setText(QString::fromStdString(symbols[rand()%5]));
+        reel2->setText(QString::fromStdString(symbols[rand()%5]));
+        reel3->setText(QString::fromStdString(symbols[rand()%5]));
 
-    player->addBalance(reward);
+        (*count)++;
 
-    currentPredictions.clear();
+        
+        if (*count > 20) {
+            timer->stop();
 
-    savePlayer(*player);
+            
+            auto result = slot.spin();
 
-    balanceLabel->setText("Balance: ₹" +
-        QString::number(player->getBalance()));
+            reel1->setText(QString::fromStdString(result[0]));
+            reel2->setText(QString::fromStdString(result[1]));
+            reel3->setText(QString::fromStdString(result[2]));
 
-    ResultDialog* dialog = new ResultDialog(
-        res,
-        reward,
-        player->getBalance(),
-        this
-    );
+            QString res = QString::fromStdString(
+                result[0] + " | " + result[1] + " | " + result[2]);
 
-    dialog->exec();
-}void MainWindow::openLeaderboard()
+            double reward = evaluator.evaluateAll(currentPredictions, result);
+
+            player->addBalance(reward);
+            currentPredictions.clear();
+
+            savePlayer(*player);
+
+            balanceLabel->setText("Balance: ₹" +
+                QString::number(player->getBalance()));
+
+            ResultDialog* dialog = new ResultDialog(
+                res,
+                reward,
+                player->getBalance(),
+                this
+            );
+
+            dialog->exec();
+
+            
+            delete count;
+            timer->deleteLater();
+        }
+    });
+
+    timer->start(80); 
+}
+void MainWindow::openLeaderboard()
 {
     LeaderboardWindow* lb = new LeaderboardWindow();
     lb->show();

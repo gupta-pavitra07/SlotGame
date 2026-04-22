@@ -16,7 +16,7 @@ PredictionDialog::PredictionDialog(QWidget *parent)
     typeBox->addItems({"EXACT", "SYMBOL", "PATTERN"});
 
     symbolBox = new QComboBox();
-    symbolBox->addItems({"CHERRY", "STAR", "DIAMOND", "BELL", "7", "ALL", "PAIR"});
+    symbolBox->addItems({"CHERRY", "STAR", "DIAMOND", "BELL", "7️", "ALL", "PAIR"});
 
     input2 = new QLineEdit();
     input3 = new QLineEdit();
