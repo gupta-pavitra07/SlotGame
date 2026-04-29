@@ -13,7 +13,8 @@ struct Option {
 
 class Strategy {
 public:
-    void suggestgreedy(double totalAmount);
+    static std::string suggestgreedy(double totalAmount);
+    static std::string suggestdp(int budget);
 };
 
 #endif

@@ -2,6 +2,9 @@
 #define STRATEGYDIALOG_H
 
 #include <QDialog>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
 
 class StrategyDialog : public QDialog
 {
@@ -9,6 +12,15 @@ class StrategyDialog : public QDialog
 
 public:
     StrategyDialog(QString strategyText, QWidget *parent = nullptr);
+    void setStrategyText(const QString& text);
+
+private slots:
+    void calculateStrategy();
+
+private:
+    QLineEdit* budgetInput;
+    QPushButton* calcButton;
+    QLabel* contentLabel;
 };
 
 #endif

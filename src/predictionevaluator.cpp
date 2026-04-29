@@ -9,7 +9,7 @@ double PredictionEvaluator::evaluateAll(vector<Prediction>& predictions, vector<
 
     for (auto &p : predictions)
     {
-        // EXACT MATCH
+
         if (p.type == EXACT)
         {
             if (p.s1 == result[0] &&
@@ -21,7 +21,6 @@ double PredictionEvaluator::evaluateAll(vector<Prediction>& predictions, vector<
             }
         }
 
-        // SYMBOL MATCH (FIXED)
         if (p.type == SYMBOL)
         {
             for (string s : result)
@@ -34,7 +33,6 @@ double PredictionEvaluator::evaluateAll(vector<Prediction>& predictions, vector<
             }
         }
 
-        // PATTERN
         if (p.type == PATTERN)
         {
             map<string, int> freq;

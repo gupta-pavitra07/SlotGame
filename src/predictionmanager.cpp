@@ -3,7 +3,8 @@
 
 using namespace std;
 
-vector<Prediction> PredictionManager::takePredictions(double totalAmount) {
+vector<Prediction> PredictionManager::takePredictions(double totalAmount) 
+{
 
     vector<Prediction> predictions;
     double remaining = totalAmount;
@@ -12,7 +13,7 @@ vector<Prediction> PredictionManager::takePredictions(double totalAmount) {
 
     while (remaining > 0) {
 
-        cout << "\nRemaining Amount: ₹" << remaining << endl;
+        cout << "\nRemaining Coins : " << remaining << endl;
 
         Prediction p;
         int choice;

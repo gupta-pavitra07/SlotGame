@@ -13,12 +13,18 @@ public:
     StartWindow(QWidget *parent = nullptr);
 
 private slots:
-    void startGame();
+    void login();
+    void registerUser();
 
 private:
     QLineEdit* nameInput;
-    QLineEdit* balanceInput;
-    QPushButton* startButton;
+    QLineEdit* passwordInput;
+    QPushButton* loginButton;
+    QPushButton* registerButton;
+
+    QString registeredUser = "";
+
+    bool isValidPassword(const QString& pwd);
 };
 
 #endif

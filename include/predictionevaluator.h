@@ -6,7 +6,8 @@
 #include <string>
 using namespace std;
 
-class PredictionEvaluator {
+class PredictionEvaluator 
+{
 public:
     double evaluateAll(vector<Prediction>& predictions, vector<string>& result);
 };

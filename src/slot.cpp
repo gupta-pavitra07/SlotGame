@@ -5,12 +5,14 @@
 
 using namespace std;
 
-SlotMachine::SlotMachine() {
+SlotMachine::SlotMachine() 
+{
     symbols = {"CHERRY", "STAR", "DIAMOND", "BELL", "7"};
     
 }
 
-vector<string> SlotMachine::spin() {
+vector<string> SlotMachine::spin() 
+{
     
     vector<string> result;
 
@@ -38,7 +40,8 @@ vector<string> SlotMachine::spin() {
     return result;
 }
 
-void SlotMachine::displaySpin(vector<string> result) {
+void SlotMachine::displaySpin(vector<string> result) 
+{
     cout << "\nSlot Result: ";
     for (string s : result) {
         cout << s << " | ";
@@ -47,7 +50,8 @@ void SlotMachine::displaySpin(vector<string> result) {
 }
 
 
-map<string, double> SlotMachine::getSymbolProbabilities() {
+map<string, double> SlotMachine::getSymbolProbabilities() 
+{
     return {
         {"CHERRY", 0.40},
         {"STAR", 0.25},

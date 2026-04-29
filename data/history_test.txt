@@ -1,0 +1,7 @@
+Symbol Match,50,WIN,60,1010
+Pattern Match (PAIR),50,LOSS,0,960
+Pattern Match (PAIR),50,WIN,100,1010
+Symbol Match,50,LOSS,0,960
+Symbol Match,100,WIN,120,980
+Symbol Match,50,LOSS,0,930
+Symbol Match,70,WIN,84,944

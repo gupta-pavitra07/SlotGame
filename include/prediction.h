@@ -4,13 +4,15 @@
 #include <string>
 using namespace std;
 
-enum PredictionType {
+enum PredictionType 
+{
     EXACT = 1,
     SYMBOL,
     PATTERN
 };
 
-struct Prediction {
+struct Prediction 
+{
     PredictionType type;
     double amount;
 

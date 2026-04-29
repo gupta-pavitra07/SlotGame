@@ -2,8 +2,11 @@
 #define PREDICTIONDIALOG_H
 
 #include <QDialog>
-#include <QComboBox>
+#include <QPushButton>
 #include <QLineEdit>
+#include <QLabel>
+#include <QWidget>
+#include <vector>
 #include "include/prediction.h"
 
 class PredictionDialog : public QDialog
@@ -11,22 +14,40 @@ class PredictionDialog : public QDialog
     Q_OBJECT
 
 public:
-    PredictionDialog(QWidget *parent = nullptr);
-    Prediction getPrediction();
+    PredictionDialog(double currentBalance, QWidget *parent = nullptr);
+    Prediction getPrediction() const;
+    void setMaxBalance(double b);
 
 private slots:
     void updateUI();
+    void selectType(QString type, QPushButton* clickedBtn);
+    void selectSymbol(QString symbol, QPushButton* clickedBtn);
+    void selectPattern(QString pattern, QPushButton* clickedBtn);
+    void slotClicked(int index);
 
 private:
-    QComboBox* typeBox;
-    QComboBox* symbolBox;
+    QString selectedType = "EXACT";
+    QString selectedSingleSymbol = "🍒";
+    QString selectedPattern = "ALL";
+    std::vector<QString> selectedExactSymbols; 
 
-    QLineEdit* input2;
-    QLineEdit* input3;
+    std::vector<QPushButton*> typeButtons;
+    std::vector<QPushButton*> symbolButtons;
+    std::vector<QPushButton*> patternButtons;
+    
+    std::vector<QPushButton*> exactSlotButtons;
+
+    QWidget* symbolWidget;
+    QWidget* slotsWidget;
+    QWidget* patternWidget;
 
     QLineEdit* amountInput;
+    double maxBalance;
 
     Prediction prediction;
+    
+    void updateSlotsUI();
+    QString emojiToText(const QString& emoji);
 };
 
 #endif

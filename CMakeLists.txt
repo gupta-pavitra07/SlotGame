@@ -19,8 +19,11 @@ add_executable(SlotGameQt
     StartWindow.cpp   
     ResultDialog.cpp 
     LeaderboardWindow.cpp 
-PredictionDialog.cpp
- StrategyDialog.cpp
+    PredictionDialog.cpp
+    StrategyDialog.cpp
+    ActivePredictionsDialog.cpp
+    ProfileDialog.cpp
+    QuizWidget.cpp
     ${SRC_FILES}
 )
 

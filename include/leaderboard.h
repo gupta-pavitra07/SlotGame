@@ -5,14 +5,15 @@
 #include <vector>
 using namespace std;
 
-class Leaderboard {
-private:
-    vector<Player> players;
+class Leaderboard 
+{
+    private:
+        vector<Player> players;
 
-public:
-    void addPlayer(Player p);
-    void sortPlayers();
-    void display();
+    public:
+        void addPlayer(Player p);
+        void sortPlayers();
+        void display();
 };
 
 #endif

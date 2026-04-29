@@ -5,7 +5,8 @@
 #include <vector>
 using namespace std;
 
-class PredictionManager {
+class PredictionManager 
+{
 public:
     vector<Prediction> takePredictions(double totalAmount);
 };

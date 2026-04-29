@@ -1,2 +1,0 @@
-set(__QT_DEPLOY_TARGET_SlotGameQt_FILE /Users/pavitragupta/DAAPBL/SlotGame/build/SlotGameQt)
-set(__QT_DEPLOY_TARGET_SlotGameQt_TYPE EXECUTABLE)
