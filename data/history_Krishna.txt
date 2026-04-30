@@ -1,0 +1,4 @@
+Exact Match,500,LOSS,0,500
+Symbol Match,50,WIN,60,510
+Symbol Match,60,LOSS,0,450
+Pattern Match (PAIR),530,WIN,1060,1060

@@ -5,3 +5,5 @@ Symbol Match,50,LOSS,0,960
 Symbol Match,100,WIN,120,980
 Symbol Match,50,LOSS,0,930
 Symbol Match,70,WIN,84,944
+Symbol Match,60,WIN,72,956
+Exact Match,100,LOSS,0,876
